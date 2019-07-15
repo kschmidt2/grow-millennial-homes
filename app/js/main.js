@@ -8,7 +8,7 @@ Highcharts.setOptions({
 document.addEventListener('DOMContentLoaded', function () {
     const myChart = Highcharts.chart('chart-container', {
         chart: {
-            type: 'bar',
+            type: 'column',
             styledMode: true,
             spacingBottom: 25,
             spacingRight: 100
@@ -16,15 +16,24 @@ document.addEventListener('DOMContentLoaded', function () {
         title: {
             text: null
         },
-        data: {
-            googleSpreadsheetKey: '1YOKb5l2VM4aAB2r20N_1aT_1vEajYrP3U-U3A6lZbC0'
+        series: [{
+            data: [
+                [2012,28],
+                [2013,31],
+                [2014,32],
+                [2015,35],
+                [2016,34],
+                [2017,36],
+                [2018,37]
+            ],
+        }],
+        plotOptions: {
+            series: {
+                groupPadding: .1
+            }
         },
         legend: {
-            align: 'right',
-            symbolRadius: 0,
-            verticalAlign: 'top',
-            x: 10,
-            itemMarginTop: -10
+            enabled: false
         },
         xAxis: {
             labels: {
@@ -45,7 +54,8 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         tooltip: {
             shadow: false,
-            padding: 10
+            padding: 10,
+            pointFormat: '{point.y}%'
         },
         responsive: {
             rules: [{
