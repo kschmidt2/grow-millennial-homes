@@ -12,35 +12,30 @@ document.addEventListener('DOMContentLoaded', function () {
             styledMode: true,
             spacingBottom: 25,
             spacingRight: 100
-        }, 
+        },
         title: {
             text: null
         },
-        series: [{
-            data: [
-                [2012,28],
-                [2013,31],
-                [2014,32],
-                [2015,35],
-                [2016,34],
-                [2017,36],
-                [2018,37]
-            ],
-        }],
-        plotOptions: {
-            series: {
-                groupPadding: .1
-            }
+        data: {
+          googleSpreadsheetKey: '1q3upw6QSnV6ammFn8Wn9EiwujLyKnw_GPZnBJWxOToo',
+          startColumn: 3,
+          endRow: 7
         },
         legend: {
-            enabled: false
+            align: 'right',
+            symbolRadius: 0,
+            verticalAlign: 'top',
+            x: 10,
+            itemMarginTop: -10
         },
         xAxis: {
             labels: {
                 style: {
                     whiteSpace: 'nowrap'
-                }
-            }
+                },
+                autoRotation: false
+            },
+            type: 'category'
         },
         yAxis: {
             title: false,
@@ -68,7 +63,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 },
                 legend: {
                     align: 'left',
-                    x: -18
+                    x: -18,
+                    itemDistance: 14
                 },
                 tooltip: {
                     enabled: false
